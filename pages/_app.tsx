@@ -8,7 +8,7 @@ import Head from 'next/head';
 const CustomGlobalStyle = createGlobalStyle`
   body {
     user-select: none;
-    background-color: #000
+    background-color: rgb(139 92 246);
   }
 
   img {
@@ -21,22 +21,22 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <title>ud2.sh</title>
-        <meta content="ud2.sh" property="og:site_name" />
-        <meta content="ud2.sh" property="og:title" />
-        <meta content="Raise invalid opcode exception." property="og:description" />
+        <title>sanyu.world</title>
+        <meta content="sanyu.world" property="og:site_name" />
+        <meta content="sanyu.world" property="og:title" />
+        <meta content="Sanyu's world" property="og:description" />
         <meta content="object" property="og:type" />
-        <meta content="https://ud2.sh" property="og:url" />
-        <meta content="#37474f" data-react-helmet="true" name="theme-color" />
+        <meta content="https://sanyu.world" property="og:url" />
       </Head>
       <ThemeProvider>
         <GlobalStyle />
         <CustomGlobalStyle />
         <div className="fixed w-full h-full z-0">
           <Image
-            src='/win_setup_img.png'
+            className="bg-repeat"
+            src='/bubbles_3.gif'
             fill={true}
-            alt='The Windows 95 Setup image'
+            alt='The background image'
             />
         </div>
         <div className="fixed z-10 overflow-hidden">

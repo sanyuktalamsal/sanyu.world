@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Modal } from '@react95/core'
+import { Avatar, Modal } from '@react95/core'
 import {
   InfoBubble,
   RecycleFull,
@@ -7,6 +7,7 @@ import {
   Wordpad,
   User,
 } from '@react95/icons';
+import Image from 'next/image';
 import Icon from '../components/Icon';
 import MainTaskBar from '../components/MainTaskBar';
 import NotepadModal from '../components/NotepadModal';
@@ -39,21 +40,28 @@ const Home: NextPage = () => {
         height={'150'}
         width={'300'}
       >
-        <div className="flex flex-col justify-center">
-          <div className="flex text-center justify-center items-center mr-auto">
-            <User variant="32x32_4" />
-            <span className="mt-1">
-              {`Hi. I'm Harrison (@hatf0).`}
-            </span>
+        <Image className="absolute z-20"
+               src="/stars.gif"
+               alt="Bubbles"
+               fill={true} />
+        <div className="absolute z-10">
+          <div className="flex flex-col">
+            <div className="flex justify-center items-center">
+              <Avatar src="/nicorobin.jpeg" alt="photo" size={32} circle />
+              <span className="pl-2">
+                Hello, there!
+              </span>
+            </div>
+            <div>
+              @sanyuktalamsal
+            </div>
+
+            <div> 
+              My name is Sanyukta Lamsal and I am a 20 year old sophomore student pursuing Computer Science at UNC Chapel Hill. 
+
+            </div>
           </div>
-          <div className="flex flex-col mt-1 space-y-2">
-            <span>
-              {`I'm a 19 year old software engineer, pursuing a degree in Comp. Sci.`}
-            </span>
-            <span>
-              {`Welcome to my personal website - I hope you enjoy :-)`}
-            </span>
-          </div>
+
         </div>
       </Modal> }
 
@@ -64,14 +72,14 @@ const Home: NextPage = () => {
         value={notepadContents[notepadContent]}
       />
 
-      <Icon.Box>
+      {/* <Icon.Box>
         <RecycleFull />
         <Icon.Text>
           Recycle Bin
         </Icon.Text>
-      </Icon.Box>
+      </Icon.Box> */}
 
-      <Icon.Wrapper onDoubleClick={() => {
+      {/* <Icon.Wrapper onDoubleClick={() => {
         let elem = document.createElement("a");
         elem.download = "resume.pdf";
         elem.href = "/resume.pdf";
@@ -83,16 +91,16 @@ const Home: NextPage = () => {
             resume.pdf
           </Icon.Text>
         </Icon.Box>
-      </Icon.Wrapper>
+      </Icon.Wrapper> */}
 
-      <Icon.Wrapper onDoubleClick={() => (setNotepadContent('about_me.txt'), setShowNotepad(true))}>
+      {/* <Icon.Wrapper onDoubleClick={() => (setNotepadContent('about_me.txt'), setShowNotepad(true))}>
         <Icon.Box>
           <Notepad variant='32x32_4' />
           <Icon.Text>
             about_me.txt
           </Icon.Text>
         </Icon.Box>
-      </Icon.Wrapper>
+      </Icon.Wrapper> */}
 
       <Icon.Wrapper onDoubleClick={() => (setNotepadContent('contact_me.txt'), setShowNotepad(true))}>
         <Icon.Box>
