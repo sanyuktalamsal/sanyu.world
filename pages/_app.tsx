@@ -8,7 +8,7 @@ import Head from 'next/head';
 const CustomGlobalStyle = createGlobalStyle`
   body {
     user-select: none;
-    background-color: rgb(76 29 149);
+    background-color: rgb(168 85 247);
   }
 
   img {

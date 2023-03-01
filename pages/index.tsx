@@ -53,8 +53,12 @@ const Home: NextPage = () => {
               </span>
             </div>
             <div> 
-              My name is Sanyukta Lamsal and I am a 20 year old sophomore student pursuing Computer Science at UNC Chapel Hill. I am currently on the look for internships and experience!
+              My name is Sanyukta Lamsal and I am a 20 year old sophomore student pursuing Computer Science at UNC Chapel Hill. I am currently on the look for internships and experience! 
+          
 
+            </div>
+            <div>
+              Feel free to explore my world...
             </div>
           </div>
 
@@ -100,7 +104,11 @@ const Home: NextPage = () => {
 
       <Icon.Wrapper onDoubleClick={() => (setNotepadContent('contact_me.txt'), setShowNotepad(true))}>
         <Icon.Box>
-          <Notepad variant='32x32_4' />
+          <Image src="/marioStar.gif"
+            alt = "Mario Star"
+            width = "32"
+            height = "32" />
+          {/* <Notepad variant='32x32_4' /> */}
           <Icon.Text>
             contact_me.txt
           </Icon.Text>
@@ -109,7 +117,11 @@ const Home: NextPage = () => {
 
       <Icon.Wrapper onDoubleClick={() => (setNotepadContent('cherished_music.txt'), setShowNotepad(true))}>
         <Icon.Box>
-          <Notepad variant='32x32_4' />
+        <Image src="/marioStar.gif"
+            alt = "Mario Star"
+            width = "32"
+            height = "32" />
+          {/* <Notepad variant='32x32_4' /> */}
           <Icon.Text>
             cherished_music.txt
           </Icon.Text>
