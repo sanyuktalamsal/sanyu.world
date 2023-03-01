@@ -42,7 +42,7 @@ const Home: NextPage = () => {
       >
         <Image className="absolute z-20"
                src="/stars.gif"
-               alt="Bubbles"
+               alt="Stars"
                fill={true} />
         <div className="absolute z-10">
           <div className="flex flex-col">
@@ -52,12 +52,8 @@ const Home: NextPage = () => {
                 Hello, there!
               </span>
             </div>
-            <div>
-              @sanyuktalamsal
-            </div>
-
             <div> 
-              My name is Sanyukta Lamsal and I am a 20 year old sophomore student pursuing Computer Science at UNC Chapel Hill. 
+              My name is Sanyukta Lamsal and I am a 20 year old sophomore student pursuing Computer Science at UNC Chapel Hill. I am currently on the look for internships and experience!
 
             </div>
           </div>
