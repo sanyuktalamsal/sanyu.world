@@ -37,14 +37,14 @@ const Home: NextPage = () => {
         icon={<InfoBubble/>}
         defaultPosition={{x: 80, y: 50}}
         title={'Welcome!'}
-        height={'150'}
+        height={'160'}
         width={'300'}
       >
-        <Image className="absolute z-20"
+        <Image className="relative z-20"
                src="/stars.gif"
                alt="Stars"
                fill={true} />
-        <div className="absolute z-10">
+        <div className="relative z-10">
           <div className="flex flex-col">
             <div className="flex justify-center items-center">
               <Avatar src="/nicorobin.jpeg" alt="photo" size={32} circle />
@@ -59,6 +59,7 @@ const Home: NextPage = () => {
             </div>
             <div>
               Feel free to explore my world...
+              
             </div>
           </div>
 
