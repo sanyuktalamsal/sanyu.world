@@ -1,20 +1,22 @@
 import '../styles/globals.scss';
 import Image from 'next/image';
 import type { AppProps } from 'next/app'
-import { ThemeProvider, GlobalStyle } from '@react95/core';
+//cant use word class has to be className
 import { createGlobalStyle } from 'styled-components'
 import Head from 'next/head';
+import '@sakun/system.css';
 
 const CustomGlobalStyle = createGlobalStyle`
   body {
     user-select: none;
-    background-color: rgb(168 85 247);
+    background-color: rgb(13 148 136);
   }
 
   img {
     pointer-events: none;
   }
 `;
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -28,22 +30,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta content="object" property="og:type" />
         <meta content="https://sanyu.world" property="og:url" />
       </Head>
-      <ThemeProvider>
-        <GlobalStyle />
-        <CustomGlobalStyle />
-        <div className="fixed w-full h-full z-0">
-          <Image
-            className="bg-repeat"
-            src='/bubbles_3.gif'
-            fill={true}
-            alt='The background image'
-            />
-        </div>
-        <div className="fixed z-10 overflow-hidden">
-          <Component {...pageProps} />
-        </div>
-      </ThemeProvider>
-    </>
+      
+      <CustomGlobalStyle />
+      <div>
+        <Component {...pageProps} />
+      </div>
+  </>
   );
 }
 
