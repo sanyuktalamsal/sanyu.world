@@ -124,7 +124,7 @@ const Home: NextPage = () => {
             height = "32" />
           {/* <Notepad variant='32x32_4' /> */}
           <Icon.Text>
-            cherished_music.txt
+            lovely_music.txt
           </Icon.Text>
         </Icon.Box>
       </Icon.Wrapper>
