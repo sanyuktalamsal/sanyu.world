@@ -89,7 +89,7 @@ const ResumeModal = ({ defaultPosition }: ModalProps) => {
                   <img style={{ width: 60, height: 60 }} src="catpixel3.png" alt="Cat Pixel Image" />
                 </div>
                 <p className="alert-text" style={{ "paddingLeft": "10px" }}>
-                  You can find my resume and such in "about".
+                  You can find my resume and such in &quot;about&quot;.
                 </p>
               </section>
               <section className="field-row" style={{ "justifyContent": "flex-end" }}>
@@ -213,7 +213,7 @@ const Home: NextPage = () => {
               <li role="menu-item"><a href="#menu">filler</a></li>
               <li role="menu-item"><a href="#menu">filler</a></li>
               <li role="menu-item" className="divider"><a href="#menu">filler</a></li>
-              <li role="menu-item"><a href="https://open.spotify.com/user/3o7s4jtsnfbyh0it7ifh1yoik">sanyu's spotify</a></li>
+              <li role="menu-item"><a href="https://open.spotify.com/user/3o7s4jtsnfbyh0it7ifh1yoik">sanyu&apos;s spotify</a></li>
             </ul>
           </li>
           <li role="menu-item" tab-index="0" aria-haspopup="true">
