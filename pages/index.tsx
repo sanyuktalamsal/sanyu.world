@@ -5,7 +5,6 @@ import Icon from '../components/Icon';
 import { DraggableProps } from 'react-draggable';
 import { RenderedModalContext, ModalContext } from '../components/ModalContext';
 import { createModalStack, modalStackReducer, ModalStack, renderModalStack } from '../components/ModalStack';
-import {View} from 'react-native';
 
 const useMousePosition = () => {
   const [
@@ -43,19 +42,19 @@ const WelcomeModal = ({ defaultPosition }: ModalProps) => {
       onDrag={() => setIsDragged(true)}
       onStop={() => setIsDragged(false)}
     >
-      <div className="absolute z-10 alert-box outer-border scale-down" style={{ "width": "30rem", "background-color": "transparent" }}>
+      <div className="absolute z-10 alert-box outer-border scale-down" style={{ "width": "30rem", "backgroundColor": "transparent" }}>
         <div className="inner-border">
           <div className={isDragged ? "invisible bg-transparent" : "bg-white"}>
-            <div className="alert-contents" style={{ "padding-left": "30px", "padding-right": "20px" }}>
-              <section className="field-row" style={{ "justify-content": "flex-start" }}>
+            <div className="alert-contents" style={{ "paddingLeft": "30px", "paddingRight": "20px" }}>
+              <section className="field-row" style={{ "justifyContent": "flexStart" }}>
                 <div className="square">
                   <img style={{ width: 60, height: 60 }} src="catpixel3.png" alt="Cat Pixel Image" />
                 </div>
-                <p className="alert-text" style={{ "padding-left": "10px" }}>
+                <p className="alert-text" style={{ "paddingLeft": "10px" }}>
                   Welcome to sanyu.world.
                 </p>
               </section>
-              <section className="field-row" style={{ "justify-content": "flex-end" }}>
+              <section className="field-row" style={{ "justifyContent": "flex-end" }}>
                 <button className="btn" onClick={() => modalCtx.dispatch({ type: 'CLOSE_MODAL', id: renderedCtx.id })}>Cancel</button>
                 <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <ResumeModal defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>OK</button>
               </section>
@@ -81,19 +80,19 @@ const ResumeModal = ({ defaultPosition }: ModalProps) => {
       onDrag={() => setIsDragged(true)}
       onStop={() => setIsDragged(false)}
     >
-      <div className="absolute z-10 alert-box outer-border scale-down" style={{ "width": "30rem", "background-color": "transparent" }}>
+      <div className="absolute z-10 alert-box outer-border scale-down" style={{ "width": "30rem", "backgroundColor": "transparent" }}>
         <div className="inner-border">
           <div className={isDragged ? "invisible bg-transparent" : "bg-white"}>
-            <div className="alert-contents" style={{ "padding-left": "30px", "padding-right": "20px" }}>
-              <section className="field-row" style={{ "justify-content": "flex-start" }}>
+            <div className="alert-contents" style={{ "paddingLeft": "30px", "paddingRight": "20px" }}>
+              <section className="field-row" style={{ "justifyContent": "flex-start" }}>
                 <div className="square">
                   <img style={{ width: 60, height: 60 }} src="catpixel3.png" alt="Cat Pixel Image" />
                 </div>
-                <p className="alert-text" style={{ "padding-left": "10px" }}>
+                <p className="alert-text" style={{ "paddingLeft": "10px" }}>
                   You can find my resume and such in "about".
                 </p>
               </section>
-              <section className="field-row" style={{ "justify-content": "flex-end" }}>
+              <section className="field-row" style={{ "justifyContent": "flex-end" }}>
                 <button className="btn" onClick={() => modalCtx.dispatch({ type: 'CLOSE_MODAL', id: renderedCtx.id })}>Cancel</button>
                 <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <HelloModal defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>OK</button>
               </section>
@@ -119,19 +118,19 @@ const HelloModal = ({ defaultPosition }: ModalProps) => {
       onDrag={() => setIsDragged(true)}
       onStop={() => setIsDragged(false)}
     >
-      <div className="absolute z-10 alert-box outer-border scale-down" style={{ "width": "30rem", "background-color": "transparent" }}>
+      <div className="absolute z-10 alert-box outer-border scale-down" style={{ "width": "30rem", "backgroundColor": "transparent" }}>
         <div className="inner-border">
           <div className={isDragged ? "invisible bg-transparent" : "bg-white"}>
-            <div className="alert-contents" style={{ "padding-left": "30px", "padding-right": "20px" }}>
-              <section className="field-row" style={{ "justify-content": "flex-start" }}>
+            <div className="alert-contents" style={{ "paddingLeft": "30px", "paddingRight": "20px" }}>
+              <section className="field-row" style={{ "justifyContent": "flex-start" }}>
                 <div className="square">
                   <img style={{ width: 120, height: 60 }} src="catpixel3.png" alt="Cat Pixel Image" />
                 </div>
-                <p className="alert-text" style={{ "padding-left": "10px" }}>
+                <p className="alert-text" style={{ "paddingLeft": "10px" }}>
                   Go ahead and explore! This site will be updated as time goes on and I gain more experience.
                 </p>
               </section>
-              <section className="field-row" style={{ "justify-content": "flex-end" }}>
+              <section className="field-row" style={{ "justifyContent": "flex-end" }}>
                 <button className="btn" onClick={() => modalCtx.dispatch({ type: 'CLOSE_MODAL', id: renderedCtx.id })}>Cancel</button>
                 <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <WelcomeModal defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>OK</button>
               </section>
@@ -169,7 +168,7 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
             <span>details</span>
           </div>
 
-          <div className="window-pane" style= {{"width": "30rem", "background-color": "transparent"}}>
+          <div className="window-pane" style= {{"width": "30rem", "backgroundColor": "transparent"}}>
             Hi there! My name is Sanyukta Lamsal and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for internships, 
           </div>
         </div>
@@ -205,10 +204,10 @@ const Home: NextPage = () => {
       {renderModalStack(modals)}
       <div className="border-b-2 border-black">
         <ul role="menu-bar">
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
+          <li role="menu-item" tab-index="0" aria-haspopup="true">
             <img style={{ width: 25, height: 25 }} src="catpixel3.png" alt="Cat Pixel Image" />
           </li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
+          <li role="menu-item" tab-index="0" aria-haspopup="true">
             <b>File </b>
             <ul role="menu">
               <li role="menu-item"><a href="#menu">filler</a></li>
@@ -217,7 +216,7 @@ const Home: NextPage = () => {
               <li role="menu-item"><a href="https://open.spotify.com/user/3o7s4jtsnfbyh0it7ifh1yoik">sanyu's spotify</a></li>
             </ul>
           </li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
+          <li role="menu-item" tab-index="0" aria-haspopup="true">
             Edit
             <ul role="menu">
               <li role="menu-item"><a href="#menu">filler</a></li>
@@ -225,7 +224,7 @@ const Home: NextPage = () => {
               <li role="menu-item" className="divider"><a href="#menu">filler</a></li>
             </ul>
           </li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
+          <li role="menu-item" tab-index="0" aria-haspopup="true">
             View
             <ul role="menu">
               <li role="menu-item"><a href="#menu">filler</a></li>
@@ -233,7 +232,7 @@ const Home: NextPage = () => {
               <li role="menu-item"><a href="#menu">filler</a></li>
             </ul>
           </li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
+          <li role="menu-item" tab-index="0" aria-haspopup="true">
             Special
             <ul role="menu">
               <li role="menu-item"><a href="#menu">filler</a></li>
