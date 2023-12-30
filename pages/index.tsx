@@ -90,7 +90,7 @@ const ResumeModal = ({ defaultPosition }: ModalProps) => {
                   <img style={{ width: 60, height: 60 }} src="catpixel3.png" alt="Cat Pixel Image" />
                 </div>
                 <p className="alert-text" style={{ "padding-left": "10px" }}>
-                  You can find my resume and such under the aboutMe.
+                  You can find my resume and such in "about".
                 </p>
               </section>
               <section className="field-row" style={{ "justify-content": "flex-end" }}>
