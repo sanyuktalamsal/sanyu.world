@@ -176,7 +176,7 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
           </div>
 
           <div className="window-pane" style= {{"width": "30rem", "backgroundColor": "transparent"}}>
-            Hi there! My name is Sanyukta Lamsal OKAY TESTING RN and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for internships, 
+            Hi there! My name is Sanyukta Lamsal and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for internships, 
           </div>
         </div>
       </div>
