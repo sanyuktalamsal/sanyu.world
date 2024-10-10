@@ -5,6 +5,10 @@ import Icon from '../components/Icon';
 import { DraggableProps } from 'react-draggable';
 import { RenderedModalContext, ModalContext } from '../components/ModalContext';
 import { createModalStack, modalStackReducer, ModalStack, renderModalStack } from '../components/ModalStack';
+//import { Bounds, BoundsContextProvider, useBounds } from 'react-bounds';
+
+
+
 
 const useMousePosition = () => {
   const [
@@ -36,11 +40,14 @@ const WelcomeModal = ({ defaultPosition }: ModalProps) => {
   const modalCtx = useContext(ModalContext);
   const mousePosition = useMousePosition();
   const [isDragged, setIsDragged] = useState(false);
+  //const bounds = useBounds; 
   return (
+    
     <Draggable
       defaultPosition={defaultPosition}
       onDrag={() => setIsDragged(true)}
       onStop={() => setIsDragged(false)}
+  
     >
       <div className="absolute z-10 alert-box outer-border scale-down" style={{ "width": "30rem", "backgroundColor": "transparent" }}>
         <div className="inner-border">
@@ -169,7 +176,7 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
           </div>
 
           <div className="window-pane" style= {{"width": "30rem", "backgroundColor": "transparent"}}>
-            Hi there! My name is Sanyukta Lamsal and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for internships, 
+            Hi there! My name is Sanyukta Lamsal OKAY TESTING RN and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for internships, 
           </div>
         </div>
       </div>
@@ -290,5 +297,4 @@ const Home: NextPage = () => {
     </ModalContext.Provider>
   )
 }
-
 export default Home;
