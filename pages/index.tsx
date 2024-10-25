@@ -38,7 +38,7 @@ interface ModalProps {
 const WelcomeModal = ({ defaultPosition }: ModalProps) => {
   const renderedCtx = useContext(RenderedModalContext);
   const modalCtx = useContext(ModalContext);
-  const mousePosition = useMousePosition();
+  // const mousePosition = useMousePosition();
   const [isDragged, setIsDragged] = useState(false);
   //const bounds = useBounds; 
   return (
@@ -63,7 +63,7 @@ const WelcomeModal = ({ defaultPosition }: ModalProps) => {
               </section>
               <section className="field-row" style={{ "justifyContent": "flex-end" }}>
                 <button className="btn" onClick={() => modalCtx.dispatch({ type: 'CLOSE_MODAL', id: renderedCtx.id })}>Cancel</button>
-                <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <ResumeModal defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>OK</button>
+                <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <ResumeModal defaultPosition={{ x: (Math.floor(window.innerWidth / 2) - 240), y: Math.floor(window.innerHeight / 2) - 150 }} /> })}>OK</button>
               </section>
             </div>
           </div>
@@ -101,7 +101,7 @@ const ResumeModal = ({ defaultPosition }: ModalProps) => {
               </section>
               <section className="field-row" style={{ "justifyContent": "flex-end" }}>
                 <button className="btn" onClick={() => modalCtx.dispatch({ type: 'CLOSE_MODAL', id: renderedCtx.id })}>Cancel</button>
-                <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <HelloModal defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>OK</button>
+                <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <HelloModal defaultPosition={{ x: (Math.floor(window.innerWidth / 2) - 240), y: Math.floor(window.innerHeight / 2) - 150 }} /> })}>OK</button>
               </section>
             </div>
           </div>
@@ -139,7 +139,7 @@ const HelloModal = ({ defaultPosition }: ModalProps) => {
               </section>
               <section className="field-row" style={{ "justifyContent": "flex-end" }}>
                 <button className="btn" onClick={() => modalCtx.dispatch({ type: 'CLOSE_MODAL', id: renderedCtx.id })}>Cancel</button>
-                <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <WelcomeModal defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>OK</button>
+                <button className="btn" style={{ "width": "95px" }} onClick={() => modalCtx.dispatch({ type: 'ADD_MODAL', element: <WelcomeModal defaultPosition={{ x: (Math.floor(window.innerWidth / 2) - 240), y: Math.floor(window.innerHeight / 2) - 150 }} /> })}>OK</button>
               </section>
             </div>
           </div>
@@ -176,7 +176,7 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
           </div>
 
           <div className="window-pane" style= {{"width": "30rem", "backgroundColor": "transparent"}}>
-            Hi there! My name is Sanyukta Lamsal and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for internships, 
+            Hi there! My name is Sanyukta Lamsal and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for full
           </div>
         </div>
       </div>
@@ -200,7 +200,9 @@ const Home: NextPage = () => {
       dispatch({ type: 'CLOSE_ALL_MODALS' });
     };
   }, []);
+  
 
+  
 
 /**
  * File, Edit, etc..
@@ -271,29 +273,28 @@ const Home: NextPage = () => {
 
 
       {/* <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            bottom: "-5%",
-            left: "50%",
-            transform: "translate(-50%, 90%)",
-          }}
-        >
-
-          <div className="standard-dialog center scale-down" style={{ width: '30rem' }}>
-            <h1 className="dialog-text">The Macintosh Finder, Version 1.0 (18 Jan 84)</h1>
-            <p className="dialog-text">&copy; 1984 Apple Computer</p>
-          </div>
-        </div>
-      </div> */}
+  style={{
+    position: "absolute",
+    bottom: "0",  // Aligns the div to the bottom of the screen
+    left: "50%",
+    transform: "translateX(-50%)",  // Centers the div horizontally
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      bottom: "5%",  // Optional adjustment from the bottom
+      left: "50%",
+      transform: "translateX(-50%)",
+    }}
+  >
+    <div className="standard-dialog center scale-down" style={{ width: '30rem' }}>
+      <h1 className="dialog-text">The Macintosh Finder, Version 1.0 (18 Jan 84)</h1>
+      <p className="dialog-text">&copy; 1984 Apple Computer</p>
+    </div>
+  </div>
+</div>
+  */}
     </ModalContext.Provider>
   )
 }
