@@ -5,6 +5,7 @@ import Icon from '../components/Icon';
 import { DraggableProps } from 'react-draggable';
 import { RenderedModalContext, ModalContext } from '../components/ModalContext';
 import { createModalStack, modalStackReducer, ModalStack, renderModalStack } from '../components/ModalStack';
+import { fontFamily } from '@xstyled/styled-components';
 //import { Bounds, BoundsContextProvider, useBounds } from 'react-bounds';
 
 
@@ -170,19 +171,21 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
             <button aria-label="Resize" className="resize"></button>
           </div>
           <div className="details-bar">
-            <a style={{ textDecoration: "none" }} href="resume2.0.pdf"> <span>resume</span> </a>
-            <a style={{ textDecoration: "none" }} href="www.linkedin.com/in/sanyukta-lamsal"> <span>linkedin</span> </a>
-            <span>details</span>
+            <a style={{ textDecoration: "none" }} href="resume_fulltime9.0.pdf"> <span>Resume</span> </a>
+            <a style={{ textDecoration: "none" }} href="www.linkedin.com/in/sanyukta-lamsal"> <span>LinkedIn</span> </a>
+            <a style={{ textDecoration: "none" }} href="https://github.com/sanyuktalamsal"> <span>GitHub</span> </a>
           </div>
 
           <div className="window-pane" style= {{"width": "30rem", "backgroundColor": "transparent"}}>
-            Hi there! My name is Sanyukta Lamsal and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for full
+            Hi there! My name is Sanyukta Lamsal and I am a student at UNC Chapel Hill pursuing Computer Science. I am currently looking out for full time, new grad roles!
+            If you would like to view my resume and GitHub, you can click above. I hope to communicate with you via LinkedIn!
           </div>
         </div>
       </div>
     </Draggable>
   );
 }
+
 
 
 const Home: NextPage = () => {
@@ -258,10 +261,11 @@ const Home: NextPage = () => {
         <div className="flex flex-col items-end">
           <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <AboutModal defaultPosition={{ x: 50 , y: 50 }}/>})}>
             <Icon.Box>
-              <img style = {{width : 20, height: 20}} src='/star (1).png' />
+              <img style = {{width : 30, height: 30}} src='/star (1).png' />
               <Icon.Text style={{
-                    fontSize: 16,
-                    color: "black"
+                    fontSize: 13,
+                    color: "black",
+                    fontFamily: "AppleFont"
                 }}>
                about
               </Icon.Text>
