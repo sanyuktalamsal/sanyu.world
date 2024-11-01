@@ -11,22 +11,22 @@ import { fontFamily } from '@xstyled/styled-components';
 
 
 
-const useMousePosition = () => {
-  const [
-    mousePosition,
-    setMousePosition
-  ] = useState({ x: null, y: null });
-  useEffect(() => {
-    const updateMousePosition = (ev: any) => {
-      setMousePosition({ x: ev.clientX, y: ev.clientY });
-    };
-    window.addEventListener('mousemove', updateMousePosition);
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-    };
-  }, []);
-  return mousePosition;
-};
+// const useMousePosition = () => {
+//   const [
+//     mousePosition,
+//     setMousePosition
+//   ] = useState({ x: null, y: null });
+//   useEffect(() => {
+//     const updateMousePosition = (ev: any) => {
+//       setMousePosition({ x: ev.clientX, y: ev.clientY });
+//     };
+//     window.addEventListener('mousemove', updateMousePosition);
+//     return () => {
+//       window.removeEventListener('mousemove', updateMousePosition);
+//     };
+//   }, []);
+//   return mousePosition;
+// };
 
 interface ModalProps {
   defaultPosition: DraggableProps['defaultPosition']
@@ -80,7 +80,7 @@ const WelcomeModal = ({ defaultPosition }: ModalProps) => {
 const ResumeModal = ({ defaultPosition }: ModalProps) => {
   const renderedCtx = useContext(RenderedModalContext);
   const modalCtx = useContext(ModalContext);
-  const mousePosition = useMousePosition();
+  // const mousePosition = useMousePosition();
   const [isDragged, setIsDragged] = useState(false);
 
   return (
@@ -118,7 +118,7 @@ const ResumeModal = ({ defaultPosition }: ModalProps) => {
 const HelloModal = ({ defaultPosition }: ModalProps) => {
   const renderedCtx = useContext(RenderedModalContext);
   const modalCtx = useContext(ModalContext);
-  const mousePosition = useMousePosition();
+  // const mousePosition = useMousePosition();
   const [isDragged, setIsDragged] = useState(false);
 
   return (
@@ -155,7 +155,7 @@ const HelloModal = ({ defaultPosition }: ModalProps) => {
 const AboutModal = ({ defaultPosition }: ModalProps) => {
   const renderedCtx = useContext(RenderedModalContext);
   const modalCtx = useContext(ModalContext);
-  const mousePosition = useMousePosition();
+  // const mousePosition = useMousePosition();
   const [isDragged, setIsDragged] = useState(false);
 
   return (
@@ -171,8 +171,8 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
             <button aria-label="Resize" className="resize"></button>
           </div>
           <div className="details-bar">
-            <a style={{ textDecoration: "none" }} href="resume_fulltime9.0.pdf"> <span>Resume</span> </a>
-            <a style={{ textDecoration: "none" }} href="www.linkedin.com/in/sanyukta-lamsal"> <span>LinkedIn</span> </a>
+            <a style={{ textDecoration: "none" }} href="resume_fulltime10.0.pdf"> <span>Resume</span> </a>
+            <a style={{ textDecoration: "none" }} href="https://www.linkedin.com/in/sanyukta-lamsal"> <span>LinkedIn</span> </a>
             <a style={{ textDecoration: "none" }} href="https://github.com/sanyuktalamsal"> <span>GitHub</span> </a>
           </div>
 
@@ -190,7 +190,7 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
 
 const Home: NextPage = () => {
   const [modals, dispatch] = useReducer(modalStackReducer, createModalStack());
-  const mousePosition = useMousePosition();
+  // const mousePosition = useMousePosition();
 
   useEffect(() => {
     // create "welcome" modal at roughly the middle of the screen,
@@ -205,8 +205,6 @@ const Home: NextPage = () => {
   }, []);
   
 
-  
-
 /**
  * File, Edit, etc..
  */
@@ -216,47 +214,29 @@ const Home: NextPage = () => {
       {renderModalStack(modals)}
       <div className="border-b-2 border-black">
         <ul role="menu-bar">
-          <li role="menu-item" tab-index="0" aria-haspopup="true">
+          <li role="menu-item" tabIndex={0} aria-haspopup="true">
             <img style={{ width: 25, height: 25 }} src="catpixel3.png" alt="Cat Pixel Image" />
           </li>
-          <li role="menu-item" tab-index="0" aria-haspopup="true">
+          <li role="menu-item" tabIndex={0}  aria-haspopup="true">
             <b>File </b>
             <ul role="menu">
-              <li role="menu-item"><a href="#menu">filler</a></li>
-              <li role="menu-item"><a href="#menu">filler</a></li>
-              <li role="menu-item" className="divider"><a href="#menu">filler</a></li>
-              <li role="menu-item"><a href="https://open.spotify.com/user/3o7s4jtsnfbyh0it7ifh1yoik">sanyu&apos;s spotify</a></li>
+              <li role="menu-item"><a href="resume_fulltime10.0.pdf">Resume</a></li>
             </ul>
           </li>
-          <li role="menu-item" tab-index="0" aria-haspopup="true">
-            Edit
-            <ul role="menu">
-              <li role="menu-item"><a href="#menu">filler</a></li>
-              <li role="menu-item"><a href="#menu">filler</a></li>
-              <li role="menu-item" className="divider"><a href="#menu">filler</a></li>
-            </ul>
-          </li>
-          <li role="menu-item" tab-index="0" aria-haspopup="true">
+
+          <li role="menu-item" tabIndex={0}  aria-haspopup="true">
             View
             <ul role="menu">
-              <li role="menu-item"><a href="#menu">filler</a></li>
-              <li role="menu-item"><a href="#menu">filler</a></li>
-              <li role="menu-item"><a href="#menu">filler</a></li>
+              <li role="menu-item"><a href="https://www.linkedin.com/in/sanyukta-lamsal">LinkedIn</a></li>
+              <li role="menu-item"><a href="https://github.com/sanyuktalamsal">GitHub</a></li>
             </ul>
           </li>
-          <li role="menu-item" tab-index="0" aria-haspopup="true">
-            Special
-            <ul role="menu">
-              <li role="menu-item"><a href="#menu">filler</a></li>
-              <li role="menu-item"><a href="#menu">filler</a></li>
-              <li role="menu-item"><a href="#menu">filler</a></li>
-            </ul>
-          </li>
+          
         </ul>
 
       </div>
 
- 
+{/* This is the about icon */}
       <div className="fixed desktop w-full h-full">
         <div className="flex flex-col items-end">
           <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <AboutModal defaultPosition={{ x: 50 , y: 50 }}/>})}>
