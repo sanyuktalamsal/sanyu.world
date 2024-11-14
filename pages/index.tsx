@@ -171,7 +171,7 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
             <button aria-label="Resize" className="resize"></button>
           </div>
           <div className="details-bar">
-            <a style={{ textDecoration: "none" }} href="resume_fulltime10.0.pdf"> <span>Resume</span> </a>
+            <a style={{ textDecoration: "none" }} href="resume_fulltime13.0.pdf"> <span>Resume</span> </a>
             <a style={{ textDecoration: "none" }} href="https://www.linkedin.com/in/sanyukta-lamsal"> <span>LinkedIn</span> </a>
             <a style={{ textDecoration: "none" }} href="https://github.com/sanyuktalamsal"> <span>GitHub</span> </a>
           </div>
@@ -220,7 +220,7 @@ const Home: NextPage = () => {
           <li role="menu-item" tabIndex={0}  aria-haspopup="true">
             <b>File </b>
             <ul role="menu">
-              <li role="menu-item"><a href="resume_fulltime10.0.pdf">Resume</a></li>
+              <li role="menu-item"><a href="resume_fulltime13.0.pdf">Resume</a></li>
             </ul>
           </li>
 
