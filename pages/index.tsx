@@ -171,13 +171,13 @@ const AboutModal = ({ defaultPosition }: ModalProps) => {
             <button aria-label="Resize" className="resize"></button>
           </div>
           <div className="details-bar">
-            <a style={{ textDecoration: "none" }} href="SWE_resume.pdf"> <span>Resume</span> </a>
+            {/* <a style={{ textDecoration: "none" }} href="SWE_resume.pdf"> <span>Resume</span> </a> */}
             <a style={{ textDecoration: "none" }} href="https://www.linkedin.com/in/sanyukta-lamsal"> <span>LinkedIn</span> </a>
             <a style={{ textDecoration: "none" }} href="https://github.com/sanyuktalamsal"> <span>GitHub</span> </a>
           </div>
 
           <div className="window-pane" style= {{"width": "30rem", "backgroundColor": "transparent"}}>
-            Hi there! My name is Sanyukta Lamsal and I am a recent Computer Science graduate from UNC Chapel Hill. I am currently looking out for full time, new grad/entry level tech roles!
+            Hi there! My name is Sanyukta Lamsal and I am a recent Computer Science graduate from UNC Chapel Hill. 
             If you would like to view my resume and GitHub, you can click above. I hope to communicate with you via LinkedIn!
           </div>
         </div>
