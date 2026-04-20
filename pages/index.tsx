@@ -220,7 +220,7 @@ const Home: NextPage = () => {
           <li role="menu-item" tabIndex={0}  aria-haspopup="true">
             <b>File </b>
             <ul role="menu">
-              <li role="menu-item"><a href="SWE_resume.pdf">Resume</a></li>
+              {/* <li role="menu-item"><a href="SWE_resume.pdf">Resume</a></li> */}
             </ul>
           </li>
 
